@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
+#include <unistd.h>
 
 int	**create_array(int x, int y)
 {

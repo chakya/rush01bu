@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 
 void	ft_putnbr(int nb);
 void	ft_putchar(char c);
@@ -69,12 +70,18 @@ void display_solution(int grid[4][4])
 
 int main(int ac, char **av)
 {
-	int	**grid = create_array(4, 4);
-	int	*view;
+	int grid[4][4] = {
+		{0, 0, 0, 0},
+		{0, 0, 0, 0},
+		{0, 0, 0, 0},
+		{0, 0, 0, 0},
+	};
+	int *view;
 
 	if (check(ac, av) == 1)
 		return (0);
 	view = get_numbers(av[1]);
+
 	if (solve(grid, view, 0) == 1)
 		display_solution(grid);
 	else
